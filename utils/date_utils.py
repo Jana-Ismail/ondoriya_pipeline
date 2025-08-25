@@ -1,0 +1,7 @@
+from datetime import datetime, timezone
+
+def get_current_utc_iso_timestamp():
+    return datetime.now(timezone.utc).isoformat()
+
+def get_current_utc_timestamp(date_format_str):
+    return datetime.now(timezone.utc).strftime(date_format_str)
