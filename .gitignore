@@ -3,9 +3,11 @@ __pycache__/
 *.py[cod]
 *.class
 
-# Virtual environment
+# Additions for this project
 .venv/
 .env
+logs/
+*.log
 
 # Distribution / packaging
 .Python
