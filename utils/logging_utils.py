@@ -7,13 +7,10 @@ from config.settings import LOG_DIR
 
 def setup_logger(name, log_file=None, level='INFO'):
     """Set up a logger with file and console handlers"""
-
-    # Create logs directory relative to project root
     ensure_directory_exists(LOG_DIR)
 
     logger = logging.getLogger(name)
     logger.setLevel(level)
-
     # Avoid duplicate handlers
     if logger.handlers:
         return logger
