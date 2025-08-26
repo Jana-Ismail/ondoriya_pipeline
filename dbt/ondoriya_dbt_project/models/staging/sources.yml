@@ -1,0 +1,32 @@
+version: 2
+
+sources:
+  - name: bronze
+    description: Raw data from MinIO
+    tables:
+      - name: raw_people
+        description: Individual person records
+
+      - name: raw_regions
+        description: Geographic regions of Ondoriya
+
+      - name: raw_faction_distribution
+        description: Political faction distribution data
+
+      - name: raw_households
+        description: Household composition data
+
+      - name: raw_planets
+        description: Planet information
+
+      - name: raw_moons
+        description: Moon data
+
+      - name: raw_language_building_blocks
+        description: Language components
+
+      - name: raw_language_roots
+        description: Language etymology
+
+      - name: raw_region_biome
+        description: Regional biome information
