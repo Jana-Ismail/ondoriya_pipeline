@@ -12,6 +12,14 @@ LOG_FILE_PATH = LOG_DIR / LOG_FILE_NAME
 
 API_BASE_URL = 'https://sample.ondoriya.com'
 
+DATA_DIR = PROJECT_ROOT / 'datalake'
+DB_NAME = 'ondoriya.duckdb'
+DB_PATH = DATA_DIR / DB_NAME
+
+BRONZE_SCHEMA = 'bronze'
+SILVER_SCHEMA = 'silver'
+GOLD_SCHEMA = 'gold'
+
 FILES_TO_INGEST = [
     "faction_distribution.csv",
     "households.csv",
@@ -28,3 +36,4 @@ MINIO_BUCKET_NAME=os.getenv('MINIO_BUCKET_NAME')
 MINIO_ACCESS_KEY = os.getenv('MINIO_ACCESS_KEY')
 MINIO_SECRET_KEY = os.getenv('MINIO_SECRET_KEY')
 MINIO_URL_HOST_PORT = os.getenv('MINIO_URL_HOST_PORT')
+

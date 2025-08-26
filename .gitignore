@@ -8,6 +8,14 @@ __pycache__/
 .env
 logs/
 *.log
+notebooks/
+*.ipynb
+.duckdb
+*.csv
+*.parquet
+*.xls
+*.xlsx
+datalake/
 
 # Distribution / packaging
 .Python
