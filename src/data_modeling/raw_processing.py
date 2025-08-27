@@ -1,6 +1,5 @@
 import duckdb
 import pandas as pd
-from minio import Minio
 from minio.error import S3Error
 from io import BytesIO
 
@@ -52,7 +51,8 @@ def main():
         ondoriya_df['INGESTION_TIMESTAMP_UTC'] = get_current_utc_timestamp('%Y-%m-%dT%H:%M:%S')
 
         file_name = obj.object_name.split('/')[-1]
-        table_name = file_name.replace('.csv', '')
+        table_name_base = file_name.replace('.csv', '')
+        table_name = f"raw_{table_name_base}"
         conn.execute(f"CREATE TABLE IF NOT EXISTS {BRONZE_SCHEMA}.{table_name} AS SELECT * FROM 'ondoriya_df'")
 
     conn.close()

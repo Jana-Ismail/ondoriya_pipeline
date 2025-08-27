@@ -1,28 +1,19 @@
 import requests
 from io import BytesIO
-from minio import Minio
 from minio.error import S3Error
 
 from utils.logging_utils import setup_logger
-from utils.date_utils import get_current_utc_timestamp
+from utils.cloud_storage_utils import connect_to_minio
 from config.settings import (
     API_BASE_URL,
     LOG_FILE_PATH,
     MINIO_BUCKET_NAME,
-    MINIO_ACCESS_KEY,
-    MINIO_SECRET_KEY,
-    MINIO_URL_HOST_PORT,
     FILES_TO_INGEST
 )
 
 logger = setup_logger(__name__, log_file=LOG_FILE_PATH)
 
-minio_client = Minio(
-    endpoint=MINIO_URL_HOST_PORT,
-    access_key=MINIO_ACCESS_KEY,
-    secret_key=MINIO_SECRET_KEY,
-    secure=False
-)
+minio_client = connect_to_minio()
 
 def get_csv_data_from_api(file_name, file_url):
     logger.info(f'Fetching data from file: {file_name} at url: {file_url}')

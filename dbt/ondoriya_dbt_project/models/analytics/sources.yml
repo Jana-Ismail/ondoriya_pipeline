@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: silver
+    description: Cleaned data from ondoriya.duckdb bronze layer
+    tables:
+      - name: stg_region
+
+      - name: stg_region_biome
+
+      - name: stg_faction_distribution
