@@ -20,6 +20,8 @@ BRONZE_SCHEMA = 'bronze'
 SILVER_SCHEMA = 'silver'
 GOLD_SCHEMA = 'gold'
 
+METABASE_DB_NAME = 'metabase_data.db'
+
 FILES_TO_INGEST = [
     "faction_distribution.csv",
     "households.csv",
@@ -36,4 +38,3 @@ MINIO_BUCKET_NAME=os.getenv('MINIO_BUCKET_NAME')
 MINIO_ACCESS_KEY = os.getenv('MINIO_ACCESS_KEY')
 MINIO_SECRET_KEY = os.getenv('MINIO_SECRET_KEY')
 MINIO_URL_HOST_PORT = os.getenv('MINIO_URL_HOST_PORT')
-
